@@ -1,0 +1,6 @@
+{
+  "name": "微光",
+  "description": "一言、一诗、一书、一世界，与历史上对话，与文学偶遇，带给你每日的灵感微光。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

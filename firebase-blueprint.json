@@ -1,0 +1,53 @@
+{
+  "entities": {
+    "Favorite": {
+      "title": "Favorite",
+      "description": "User's favorite items",
+      "type": "object",
+      "properties": {
+        "type": { "type": "string" },
+        "data": { "type": "object" },
+        "addedAt": { "type": "number" }
+      },
+      "required": ["type", "data", "addedAt"]
+    },
+    "Note": {
+      "title": "Note",
+      "description": "User's personal notes",
+      "type": "object",
+      "properties": {
+        "itemId": { "type": "string" },
+        "type": { "type": "string" },
+        "itemData": { "type": "object" },
+        "content": { "type": "string" },
+        "createdAt": { "type": "number" },
+        "updatedAt": { "type": "number" }
+      },
+      "required": ["itemId", "type", "itemData", "content", "createdAt", "updatedAt"]
+    },
+    "FocusSession": {
+      "title": "Focus Session",
+      "description": "User's mindfulness sessions",
+      "type": "object",
+      "properties": {
+        "duration": { "type": "number" },
+        "completedAt": { "type": "number" }
+      },
+      "required": ["duration", "completedAt"]
+    }
+  },
+  "firestore": {
+    "users/{userId}/favorites/{favoriteId}": {
+      "schema": "#/entities/Favorite",
+      "description": "User's favorite collection"
+    },
+    "users/{userId}/notes/{noteId}": {
+      "schema": "#/entities/Note",
+      "description": "User's notes collection"
+    },
+    "users/{userId}/focusSessions/{sessionId}": {
+      "schema": "#/entities/FocusSession",
+      "description": "User's focus sessions collection"
+    }
+  }
+}
